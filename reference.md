@@ -1,0 +1,3 @@
+- **Reference ⬇️**
+  - [TEXTURE SVG](https://loading.io/pattern/)
+  - [INSPIRATION](https://20essentials.github.io/project-000-216/assets/inspiration.png)

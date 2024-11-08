@@ -1,0 +1,174 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: white transparent;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('assets/texture.svg');
+  background-size: 30vw;
+  perspective: 5000px;
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+
+.container {
+  width: 330px;
+  height: 200px;
+  perspective: 5000px;
+  transform-style: preserve-3d;
+  position: relative;
+  animation: rotar 20s linear infinite alternate both;
+
+  @media (width <= 1111px) {
+    top: -30vh;
+    zoom: 0.6;
+  }
+}
+
+.subcontainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  perspective: 5000px;
+  transform-style: preserve-3d;
+
+  .container-column {
+    display: flex;
+    position: absolute;
+    width: max-content;
+    height: 40px;
+    transform-origin: 0% 0%;
+    background-color: rgba(0, 0, 255, 0.3);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+
+    .block {
+      border: 1px solid #000;
+      width: 70px;
+      height: 100%;
+      background-color: #00fa9a;
+      background-image: url(assets/money.avif);
+      background-size: cover;
+
+      aspect-ratio: 9 / 16;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+  }
+
+  .container-columns-n1-5 {
+    transform: rotate(131deg) rotateX(90deg);
+    left: 46%;
+    top: 18%;
+  }
+  .container-columns-n1-5-inverse {
+    transform-origin: 100% 0%;
+    transform: rotate(-131deg) rotateX(90deg);
+    top: 18%;
+    right: 46%;
+  }
+  .container-columns-n2-5 {
+    left: 56%;
+    transform: rotate(131deg) rotateX(90deg);
+    top: 18%;
+  }
+  .container-columns-n2-5-inverse {
+    transform-origin: 100% 0%;
+    transform: rotate(-131deg) rotateX(90deg);
+    top: 18%;
+    right: 56%;
+  }
+  .container-columns-n3-4 {
+    transform: rotate(131deg) rotateX(90deg);
+    left: 58%;
+    top: 44%;
+  }
+  .container-columns-n3-4-inverse {
+    transform-origin: 100% 0%;
+    transform: rotate(-131deg) rotateX(90deg);
+    right: 58%;
+    top: 44%;
+  }
+  .container-columns-n4-3 {
+    transform: rotate(131deg) rotateX(90deg);
+    left: 56%;
+    bottom: 9%;
+  }
+  .container-columns-n4-3-inverse {
+    transform-origin: 100% 0%;
+    transform: rotate(-131deg) rotateX(90deg);
+    right: 56%;
+    bottom: 9%;
+  }
+  .container-columns-n5-2 {
+    transform: rotate(131deg) rotateX(90deg);
+    left: 58%;
+    bottom: -17%;
+  }
+  .container-columns-n5-2-inverse {
+    transform-origin: 100% 0%;
+    transform: rotate(-131deg) rotateX(90deg);
+    right: 58%;
+    bottom: -17%;
+  }
+
+  .container-columns-n6-1 {
+    transform: rotate(131deg) rotateX(90deg);
+    left: 57%;
+    bottom: -43%;
+  }
+  .container-columns-n6-1-inverse {
+    transform: rotate(-131deg) rotateX(90deg);
+    transform-origin: 100% 0%;
+    right: 57%;
+    bottom: -43%;
+  }
+}
+
+.container-rows {
+  display: flex;
+  height: 40px;
+  width: 100%;
+  justify-content: center;
+  transform-origin: 50% 100%;
+  perspective: 5000px;
+  transform-style: preserve-3d;
+  transform: translateZ(40px) rotateX(90deg);
+
+  .block {
+    border: 1px solid #000;
+    width: 70px;
+    height: 100%;
+    background-color: #00fa9a;
+    background-image: url(assets/money.avif);
+    background-size: cover;
+    aspect-ratio: 16 / 9;
+    box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+  }
+}
+
+@keyframes rotar {
+  0% {
+    transform: rotateX(-40deg) scale(1);
+  }
+  100% {
+    transform: rotateX(-40deg) scale(2);
+  }
+}
